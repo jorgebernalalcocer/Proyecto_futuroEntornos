@@ -127,6 +127,29 @@ public double getVacacionesCurso(){
     return funcion;
 }
 
+public double getPagaExtraInvierno(){
+    double funcion = (Finiquito.getSalarioBase() / 365) * ((getMesFinalizar()-1)*30+diaFinalizar);
+    return funcion;
+
+}
+
+public double getPagaExtraVerano(){
+    double invierno=0;
+    double verano=0;
+    if (getMesInicio()>=7){
+         invierno = (365-(getMesInicio()-1*30+diaInicio));
+        if(getMesFinalizar()<=6){
+            verano =  getMesFinalizar()-1*30+diaFinalizar;
+            
+        }
+
+
+
+
+    }
+    return ((invierno+verano)*getSalarioDiaSinExtrasalarial());
+    
+}
 
 
 
